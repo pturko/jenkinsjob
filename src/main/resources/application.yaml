@@ -1,0 +1,23 @@
+server.port: 8081
+logging:
+  level:
+    com:
+      oklimenko: DEBUG
+    org:
+      springframework:
+        kafka:
+          listener:
+            KafkaMessageListenerContainer: ERROR
+      apache:
+        kafka:
+          clients:
+            FetchSessionHandler: INFO
+            consumer:
+              internals: INFO
+
+kafka:
+  payment:
+    bootstrapAddress: localhost:9092
+    groupId: local-consumer
+    enabled: true
+    topic: test
